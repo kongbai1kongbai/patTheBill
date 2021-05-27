@@ -1,0 +1,25 @@
+<!-- 遮罩层 -->
+<view class="shade">
+    <view class="container">
+      <text class="title">{{title}}</text>
+      <!-- 参赛人数设置 -->
+      <view class="people">
+        参赛人数：<input type="number" placeholder="请输入参赛人数" class="input" bindblur="getPeopleNumber"/>
+      </view>
+      <!-- 选择抽奖形式 -->
+      <view class="selection">
+        <view class="text">抽奖形式:</view>
+        <view class="radio-btn">
+          <radio-group class="radio-group">
+            <radio class="radio" wx:for-items="{{items}}" wx:key="name" checked>
+              <text>{{item.value}}</text>
+            </radio>
+          </radio-group>
+        </view>
+      </view>
+      <view class="btn">
+        <button size="mini" class="btn-cancel" bindtap="cancel">{{txt_cancel}}</button>
+        <button size="mini" class="btn-confirm" bindtap="confirm">{{txt_confirm}}</button>
+      </view>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "createRoom": "../../components/createRoom/createRoom",
+    "enterRoom": "../../components/enterRoom/enterRoom"
+  }
+}

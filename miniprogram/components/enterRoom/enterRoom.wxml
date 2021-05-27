@@ -1,0 +1,14 @@
+<!-- 遮罩层 -->
+<view class="shade">
+  <view class="container">
+    <text class="title">{{title}}</text>
+    <!-- 房间id -->
+    <view class="roomId">
+      <input type="text" placeholder="请输入房间id" class="input" name="room" bindblur="getInputValue"/>
+    </view>
+    <view class="btnContainer">
+      <button size="mini" class="btn-cancel" bindtap="roomCancel">{{room_cancel}}</button>
+      <button size='mini' class="btn-confirm" bindtap="roomConfirm">{{room_confirm}}</button>
+    </view>
+  </view>
+</view>

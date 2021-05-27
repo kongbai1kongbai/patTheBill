@@ -1,0 +1,71 @@
+/* 遮罩层 */
+.shade {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+}
+.container {
+  width: 580rpx;
+  height: 620rpx;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  margin: -370rpx 85rpx;
+  background-color: #f4edda;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  margin: 10px;
+  font-size: 50rpx;
+}
+
+.btn {
+  flex-direction: row;
+  align-items: center;
+}
+/* 取消按钮 */
+.btn-cancel {
+  margin: 30rpx;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+  background: linear-gradient(to left,#f2f5d0, #d4f5c1);
+  float: left;
+}
+/* 确定按钮 */
+.btn-confirm {
+  margin: 30rpx;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+  background: linear-gradient(to left,#f2f5d0, #d4f5c1);
+}
+/* 参赛人数设置 */
+.input {
+  padding: 15px 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+/* 选择框 */
+.selection {
+  width: 200px;
+  height: 80px;
+}
+
+.radio-btn {
+  width: 150px;
+  padding: 10px 15px;
+}
+.radio-group {
+  border-bottom: 1px solid #ddd;
+}
+.radio {
+  display: block;
+  border-top: 1px solid #ddd;
+  padding: 5px;
+}

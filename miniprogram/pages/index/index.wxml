@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="teamName">
+    <text>做什么都队</text>
+    <text>\n队长：akayzhang</text>
+    <text decode="true">\n队员：ireneyuan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jackleizhou</text>
+  </view>
+  <!--用户授权了，就显示头像和昵称-->
+  <view class="infoContainer" wx:if="{{isShowUserName}}">
+      <image src="{{userInfo.avatarUrl}}" class="image"></image>
+      <text class="nickName">{{userInfo.nickName}}</text>
+  </view>
+  <!--如果用户没有授权，显示登陆按钮  -->
+  <view wx:if="{{!isShowUserName}}" class="button infoLogin">
+    <button bindtap="getUserProfile">授权登录</button>
+  </view>
+
+  <view class="buttonContainer">
+    <view class="createBtn">
+      <button plain="true" class="button" bindtap="click" wx:if="{{!showDialog && isShowUserName}}" >创建房间</button>
+      <createRoom wx:if="{{showDialog}}" bind:cancel="cancel_event" bind:confirm="confirm_event"></createRoom>
+    </view>
+    <view class="roomBtn">
+      <button plain="true" class="button" bindtap="joinRoom" wx:if="{{!showRoom && isShowUserName}}">加入房间</button>
+      <enterRoom bind:roomIdCancel="cancel_room" bind:roomIdConfirm="confirm_room" wx:if="{{showRoom}}"></enterRoom>
+    </view>
+    
+    <button plain="true" class="button" bindtap="selectHistory" wx:if="{{isShowUserName}}">历史记录</button>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">房间号</view>
+    <view class="th">时间</view>
+    <view class="th">游戏名</view>
+    <view class="th">买单老板</view>
+  </view>
+  <block>
+    <view class="tr bg-g" wx:for="{{history}}"  wx:for-item="item" 
+    wx:for-index="index"
+    wx:key="roomID">
+      <view class="td">{{item.roomID}}</view>
+      <view class="td">{{item.time}}</view>
+      <view class="td">{{item.gameID}}</view>
+      <view class="td">{{item.buyerName}}</view>
+    </view>
+  </block>
+</view>

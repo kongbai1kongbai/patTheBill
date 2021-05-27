@@ -1,0 +1,93 @@
+ <!-- 游戏页面 -->
+ <view class="container">
+    <view class="btnContainer">
+    <view bindtap="ShowRoomId" data-text="{{roomID}}" class="roomId">复制房间ID</view>
+    <button class="btnOut" bindtap="outRoom">退出</button>
+    <button class="btnDelte" bindtap="deleteRoom" disabled="{{isDisabled}}">删除</button>
+    </view>   
+    <view class="headContainer">
+    {{userNames}}
+    </view>
+    <button class="btnStart" bindtap="showStartGame" disabled="{{dis_start}}" wx:if="{{!isShowStartGame}}">开始游戏</button>
+    <view class="gameContainer" wx:if="{{isShowStartGame}}" bindtap="showGame">
+    <view class="game">{{start}} - {{end}}</view>
+    <view class="inputContainer">
+        <view class="showNumber">{{number}}</view>
+        <button size="mini" disabled="{{dis_input}}" bindtap="gameStart">确定输入</button>
+        <button size="mini" bindtap="delNumber">删除</button>
+    </view>
+    <view class="numberContainer">
+        <button bindtap="getNumber" data-text="1" class="btnNumber">1</button>
+        <button bindtap="getNumber" data-text="2" class="btnNumber">2</button>
+        <button bindtap="getNumber" data-text="3" class="btnNumber">3</button>
+        <button bindtap="getNumber" data-text="4" class="btnNumber">4</button>
+        <button bindtap="getNumber" data-text="5" class="btnNumber">5</button>
+        <button bindtap="getNumber" data-text="6" class="btnNumber">6</button>
+        <button bindtap="getNumber" data-text="7" class="btnNumber">7</button>
+        <button bindtap="getNumber" data-text="8" class="btnNumber">8</button>
+        <button bindtap="getNumber" data-text="9" class="btnNumber">9</button>
+        <button bindtap="getNumber" data-text="0" class="btnNumber">0</button>
+    </view>
+    </view>
+    <view class="boomContainer" wx:if="{{isShowBoom}}">
+        <view class="firework-grp">
+            <view class="firework pos1">
+                <view class="drops-grp">
+                    <text class="drop drop-1"></text>
+                    <text class="drop drop-2"></text>
+                    <text class="drop drop-3"></text>
+                    <text class="drop drop-4"></text>
+                </view>
+                <view class="drops-grp drops-grp2">
+                    <text class="drop drop-1"></text>
+                    <text class="drop drop-2"></text>
+                    <text class="drop drop-3"></text>
+                    <text class="drop drop-4"></text>
+                </view>
+            </view>
+            <view class="firework pos2 delay1">
+                <view class="drops-grp">
+                    <text class="drop drop-1"></text>
+                    <text class="drop drop-2"></text>
+                    <text class="drop drop-3"></text>
+                    <text class="drop drop-4"></text>
+                </view>
+                <view class="drops-grp drops-grp2">
+                    <text class="drop drop-1"></text>
+                    <text class="drop drop-2"></text>
+                    <text class="drop drop-3"></text>
+                    <text class="drop drop-4"></text>
+                </view>
+            </view>
+            <view class="firework pos3 delay2">
+                <view class="drops-grp">
+                    <text class="drop drop-1"></text>
+                    <text class="drop drop-2"></text>
+                    <text class="drop drop-3"></text>
+                    <text class="drop drop-4"></text>
+                </view>
+                <view class="drops-grp drops-grp2">
+                    <text class="drop drop-1"></text>
+                    <text class="drop drop-2"></text>
+                    <text class="drop drop-3"></text>
+                    <text class="drop drop-4"></text>
+                </view>
+            </view>
+            <view class="firework pos4 ">
+                <view class="drops-grp">
+                    <text class="drop drop-1"></text>
+                    <text class="drop drop-2"></text>
+                    <text class="drop drop-3"></text>
+                    <text class="drop drop-4"></text>
+                </view>
+                <view class="drops-grp drops-grp2">
+                    <text class="drop drop-1"></text>
+                    <text class="drop drop-2"></text>
+                    <text class="drop drop-3"></text>
+                    <text class="drop drop-4"></text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+

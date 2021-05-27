@@ -1,0 +1,54 @@
+/**index.wxss**/
+/* 头像 昵称框 */
+.teamName {
+  width: 400rpx;
+  height: 200rpx;
+  position: relative;
+  top: 110px;
+  right: 45px;
+}
+.infoContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+  align-items: center;
+}
+.infoLogin {
+  position: absolute;
+  top: 225px;
+}
+.image {
+  border-radius: 128rpx;
+  width: 128rpx;
+  height: 128rpx;
+  margin-top: 110px;
+}
+.nickName {
+  margin-top: 20rpx;
+  font-size: 38rpx;
+}
+/* 选项 */
+.buttonContainer {
+position: absolute;
+top: 650rpx;
+width: 60%;
+}
+.button {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+  border: none !important;
+  background: linear-gradient(to left,#f2f5d0, #d4f5c1);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  background-image: url('https://p.qpic.cn/kandianac/0/4cf015832999.png/0');
+  margin: 0px;
+  background-size: 100% 100%;
+}
