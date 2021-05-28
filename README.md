@@ -55,7 +55,9 @@
 ![image text](https://github.com/kongbai1kongbai/patTheBill/blob/master/images/%E5%BC%80%E5%A7%8B%E6%B8%B8%E6%88%8F%E5%9B%BE.png)
 
 ### 视频介绍
-1
+<video width="720" height="1560" controls>
+    <source src="https://github.com/kongbai1kongbai/patTheBill/blob/master/images/%E4%BD%93%E9%AA%8C%E8%A7%86%E9%A2%91.mp4" type="video/mp4">
+</video>
 
 ## 模块介绍
 由上图系统架构可看出，整个系统主要分为三个大模块：
