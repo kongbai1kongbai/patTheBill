@@ -22,9 +22,11 @@
 - 任何用户进入页面, 均可以显示最近一段时间参与的买单活动, 包括参与人数, 时间, 最终买单人的id等, 如为自己主动发起的, 可标记为房主。
 
 页面跳转图：
+
 ![image text](https://github.com/kongbai1kongbai/patTheBill/blob/master/images/%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC%E5%9B%BE.png)
 
 用例图：
+
 ![image text](https://github.com/kongbai1kongbai/patTheBill/blob/master/images/%E4%B9%B0%E5%8D%95%E6%97%B6%E9%97%B4%E5%88%B0%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
 
 ### 系统架构（功能模块）
