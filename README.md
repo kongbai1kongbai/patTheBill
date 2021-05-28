@@ -40,7 +40,7 @@
 
 创建房间：
 
-![image text](https://github.com/kongbai1kongbai/patTheBill/blob/master/images/%E4%B9%B0%E5%8D%95%E6%97%B6%E9%97%B4%E5%88%B0%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
+![image text](https://github.com/kongbai1kongbai/patTheBill/blob/master/images/%E5%88%9B%E5%BB%BA%E6%88%BF%E9%97%B4%E5%BC%B9%E7%AA%97.png)
 
 历史记录：
 
