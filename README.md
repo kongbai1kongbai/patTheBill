@@ -27,13 +27,32 @@
 
 用例图：
 
-![image text](https://github.com/kongbai1kongbai/patTheBill/blob/master/images/%E4%B9%B0%E5%8D%95%E6%97%B6%E9%97%B4%E5%88%B0%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
-
-### 系统架构（功能模块）
 ![image text](https://github.com/kongbai1kongbai/patTheBill/blob/master/images/%E6%8A%BD%E5%A5%96%E6%B8%B8%E6%88%8F%E7%94%A8%E4%BE%8B%E5%9B%BE.png)
 
+
+### 系统架构（功能模块）
+![image text](https://github.com/kongbai1kongbai/patTheBill/blob/master/images/%E4%B9%B0%E5%8D%95%E6%97%B6%E9%97%B4%E5%88%B0%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
+
 ### 页面展示
-1
+主页：
+
+(https://github.com/kongbai1kongbai/patTheBill/blob/master/images/%E4%B8%BB%E9%A1%B5%E5%9B%BE.png)
+
+创建房间：
+
+(https://github.com/kongbai1kongbai/patTheBill/blob/master/images/%E4%B9%B0%E5%8D%95%E6%97%B6%E9%97%B4%E5%88%B0%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
+
+历史记录：
+
+(https://github.com/kongbai1kongbai/patTheBill/blob/master/images/%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95%E5%9B%BE.png)
+
+游戏房间（未开始）：
+
+(https://github.com/kongbai1kongbai/patTheBill/blob/master/images/%E6%9C%AA%E5%BC%80%E5%A7%8B%E6%B8%B8%E6%88%8F%E5%9B%BE.png)
+
+游戏房间（已开始）：
+
+(https://github.com/kongbai1kongbai/patTheBill/blob/master/images/%E5%BC%80%E5%A7%8B%E6%B8%B8%E6%88%8F%E5%9B%BE.png)
 
 ### 视频介绍
 1
