@@ -8,10 +8,11 @@ cloud.init({
 
 // 创建房间云函数入口函数
 exports.main = async (event, context) => {
-  console.log(event)
+  //获取访问上下文
   const wxContext = cloud.getWXContext()
   // 获取用户ID，此处为用户ID为房主ID
   let userID = wxContext.OPENID
+
   // 获取用户Name
   let userName = event.userName
   // 获取房间总人数
@@ -19,12 +20,13 @@ exports.main = async (event, context) => {
   // 获取游戏ID
   let gameID = event.gameID
 
+  // 获取数据库实例
   const db = cloud.database()
   const _ = db.command
   
+  //查询room表中该用户是否已存在，如果已存在则返回创建房间失败
   let roomID = -1
   let exist = false 
-  //查询room表中该用户是否已存在，如果已存在则返回创建房间失败
   await db.collection('room').where({
     user_list:userID,
     status:_.neq(3),
@@ -34,16 +36,17 @@ exports.main = async (event, context) => {
       exist = true
     }
   })
-
   if (exist){
     return{
       event,
-      ret:0,
+      ret:-1,
       roomID:roomID
     }
   }
+
+  // 在房间表中加入新建的房间记录
   let status = 0
-  if(totalNum == 1){
+  if(totalNum == 1){ // 判断是否创建的房间只有一个用户
     status = 1
   }
   let success = false
@@ -64,7 +67,6 @@ exports.main = async (event, context) => {
     success = true
     roomID = res._id
   })
-  
   if(success){
     return{
       event,
@@ -74,7 +76,7 @@ exports.main = async (event, context) => {
   }else{
     return{
       event,
-      ret: -1,
+      ret: 0,
       roomID:res.roomID
     }
   }

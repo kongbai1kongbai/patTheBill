@@ -8,13 +8,16 @@ cloud.init({
 
 // 获取历史记录云函数入口函数
 exports.main = async (event, context) => {
+ // 请求中上下文信息
   const wxContext = cloud.getWXContext()
-  console.log(event)
   //获取请求参数
   let userID = wxContext.OPENID
 
-  let historyObjList = []
+  // 获取数据库实例
   const db = cloud.database()
+
+  // 从room表中查询相应记录并返回历史记录对象列表
+  let historyObjList = []
   await db.collection('room').where({
     user_list:userID,
     status:3
@@ -36,8 +39,6 @@ exports.main = async (event, context) => {
       historyObjList.push(historyObj)
     }
   })
-
-  console.log(historyObjList)
   return {
     event,
     history: historyObjList

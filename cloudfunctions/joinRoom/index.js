@@ -5,17 +5,19 @@ cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
 })
 
-// 云函数入口函数
+// 加入房间云函数入口函数
 exports.main = async (event, context) => {
+  // 获取请求上下文信息
   const wxContext = cloud.getWXContext()
-
   // 获取用户ID
   let userID  = wxContext.OPENID
+
   // 获取房间ID
   let roomID = event.roomID
   // 获取用户昵称
   let userName = event.userName
 
+  // 获取数据库实例
   const db = cloud.database()
   const _ = db.command
   
@@ -41,18 +43,6 @@ exports.main = async (event, context) => {
     }
   })
   if(exist){
-      // 写加入房间推送日志
-    db.collection('game_log').add({
-      data:{
-        room_id: roomID,
-        action: 'joinRoom',
-        user_id: userID,
-        info: userNames,
-        time: new Date().toLocaleString()
-      }
-    }).then(res => {
-      console.log(res)
-    })
     return{
       event,
       ret: -1,
@@ -63,7 +53,7 @@ exports.main = async (event, context) => {
     }
   }
 
-  // 确认当前roomID是否存在
+  // 确认请求中roomID是否存在，如果不存在，直接返回
   let room_exist = false
   await db.collection('room').where({
     _id: roomID,
@@ -86,12 +76,12 @@ exports.main = async (event, context) => {
   let existNum = -1
   let totalNum = -1
   let userList = []
-  //查询该房间房间状态，该处有bug，roomID不对时则云函数报错不返回
+  //查询该房间房间状态，如果不是房前房间处于人数未满的状态，则直接返回
   await db.collection('room').doc(roomID).get().then(res=>{
     console.log(res)
     status = res.data.status
     existNum = res.data.exist_num
-    totalNum = res.data.totalNum
+    totalNum = res.data.total_num
     userList = res.data.user_list
     userNames =  res.data.user_names
     if(res.data.owner_id==userID){
@@ -101,7 +91,7 @@ exports.main = async (event, context) => {
   if(status!=0){
     return{
       event,
-      ret:0,
+      ret:-2,
       status:status,
       userNames:userNames,
       roomID: roomID,
@@ -109,14 +99,16 @@ exports.main = async (event, context) => {
     }
   }
 
-  //修改值
+  //修改room表中对应的房间状态，并修改roon表信息
   existNum++
+  console.log('exist_num:', existNum)
+  console.log('total_num:', totalNum)
   if(existNum == totalNum){
     status = 1
   }
+  console.log('status:', status)
   userList.push(userID)
   userNames = userNames + ',' + userName
-
   db.collection('room').doc(roomID).update({
     data:{
       exist_num: existNum,
@@ -126,7 +118,7 @@ exports.main = async (event, context) => {
     }
   })
 
-  // 如果状态变为人数已满，则写可以开始游戏日志
+  // 如果状态变为人数已满，则写可以开始游戏推送日志
   if(status == 1){
     db.collection('game_log').add({
       data:{
